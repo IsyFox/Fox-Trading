@@ -1752,6 +1752,312 @@ findL("e","e2r").b=findL("e","e2r").b.replace("tem 22 situações destas","tem 5
 /* Teste rápido no fim de cada lição */
 const LCT={f:"f",t:"t",b:"b",p:"p",i:"i",s:"s",o:"o",a:"a",e:"e",k:"k",r:"r",c:"c"};
 
+/* ---------- Perguntas próprias de cada lição ---------- */
+const LQ={
+f1:[["Quem move realmente o preço no forex?",["Os traders de retalho","Bancos centrais, bancos, fundos e grandes empresas","As corretoras sozinhas","Os governos através de leis"],1,"O trader de retalho é pequeno demais para mexer no mercado. O objectivo é seguir o dinheiro grande."],
+ ["Quando funciona o mercado forex?",["Só em horário de bolsa","24 horas por dia, de segunda a sexta-feira","24 horas, 7 dias por semana","Só de manhã"],1,"Não tem bolsa central: funciona entre instituições, 24 horas, 5 dias por semana."],
+ ["Como ganha dinheiro um trader de retalho no forex?",["Recebendo juros fixos","Com a variação do preço entre duas moedas, comprando ou vendendo","Com dividendos","Com bónus da corretora"],1,"Compra quando espera subida, vende quando espera descida."]],
+f2:[["Em EUR/USD = 1.0850, o que significa o preço?",["1 dólar custa 1.0850 euros","1 euro custa 1.0850 dólares","O par subiu 1.0850 %","São precisos 1.0850 euros por dia"],1,"O preço diz quantas unidades da moeda de cotação compram 1 unidade da moeda base."],
+ ["Que tipo de par é USD/ZAR?",["Major","Cruzado","Exótico","Índice"],2,"Moeda forte com moeda de economia emergente: exótico, com spread alto."],
+ ["Quantos pares recomenda o curso para os primeiros meses?",["Um só","Dois, estudados a fundo","Dez, para ter mais oportunidades","Todos os majors"],1,"Conhecer bem o carácter de dois pares (EUR/USD e GBP/USD) vale mais do que olhar para vinte."]],
+f3:[["EUR/USD passa de 1.08500 para 1.08750. Quantos pips?",["2.5","25","250","0.25"],1,"0.00250 ÷ 0.0001 = 25 pips."],
+ ["Quanto vale 1 pip em EUR/USD com 0.10 lote?",["$0.10","$1","$10","$100"],1,"Mini lote: $1 por pip."],
+ ["Compra 0.05 lote de GBP/USD e ganha 42 pips. Quanto ganhou?",["$2.10","$21","$42","$210"],1,"42 × $0.50 = $21."]],
+f4:[["O que é o spread?",["A comissão mensal","A diferença entre o ask e o bid","O juro nocturno","A margem bloqueada"],1,"Ask − bid. Paga-o logo ao abrir a operação."],
+ ["Em que dia o swap costuma ser cobrado a triplicar?",["Segunda","Quarta","Sexta","Domingo"],1,"À quarta-feira, para cobrir o fim-de-semana."],
+ ["Porque é perigoso um stop de 3 a 5 pips?",["Porque é caro","Porque o spread e o ruído normal o atingem sem o preço ir realmente contra si","Porque a corretora proíbe","Porque aumenta o swap"],1,"Com 1 a 2 pips de spread, um stop tão curto fica dentro do ruído."]],
+f5:[["Qual a margem para 0.10 lote de EUR/USD a 1.0850 com 1:100?",["$10.85","$108.50","$1 085","$21.70"],1,"10 850 ÷ 100 = $108.50."],
+ ["A alavancagem muda o valor de cada pip?",["Sim, sempre","Não. O valor do pip depende só do lote","Só em conta real","Só nos pares JPY"],1,"A alavancagem muda apenas a margem necessária."],
+ ["O que é o stop out?",["Um stop loss automático colocado por si","Fecho forçado das posições quando o nível de margem cai abaixo do limite","Uma ordem pendente","O fecho do mercado à sexta"],1,"A corretora fecha as posições quando o capital já não cobre a margem."]],
+f6:[["Quer comprar abaixo do preço actual, num order block. Que ordem usa?",["Buy stop","Buy limit","Sell limit","Ordem a mercado"],1,"Buy limit compra abaixo do preço actual."],
+ ["Quer vender só se o preço romper um suporte para baixo. Que ordem usa?",["Sell limit","Sell stop","Buy stop","Buy limit"],1,"Sell stop vende abaixo do preço actual, no rompimento."],
+ ["Qual a regra de ouro sobre o stop loss?",["Usar só em conta real","Nunca abrir uma operação sem stop loss","Colocar depois de ver o resultado","Só nas vendas"],1,"O stop define a perda máxima antes de entrar."]],
+f7:[["Qual é a killzone de Londres em hora de Maputo (Novembro)?",["02:00–05:00","09:00–12:00","15:00–18:00","21:00–00:00"],1,"Muitas vezes o preço varre a faixa asiática nesta janela."],
+ ["Que período tem maior volume e spreads mais baixos?",["Sessão asiática","Sobreposição Londres–Nova Iorque (15:00–19:00)","Depois das 22:00","Domingo à noite"],1,"As duas maiores praças abertas ao mesmo tempo."],
+ ["O que se forma entre as 02:00 e as 09:00 de Maputo?",["O pico de volatilidade do dia","A faixa asiática, com liquidez acima e abaixo","O fecho diário","As notícias dos EUA"],1,"Máximo e mínimo asiáticos acumulam stops."]],
+f8:[["Que estilo é mais realista para quem trabalha das 08:00 às 17:00?",["Scalping","Swing trading com ordens pendentes","Day trading na killzone de Londres","Operar à hora de almoço"],1,"Análise à noite, ordens pendentes, 30 a 60 minutos por dia."],
+ ["Porque é o scalping o estilo mais difícil para iniciantes?",["Precisa de muito capital","Os custos pesam mais em alvos pequenos e as decisões são rápidas","É proibido","Só funciona no ouro"],1,"Spread e decisões rápidas pesam muito em alvos de poucos pips."],
+ ["Durante quanto tempo deve ficar com o mesmo estilo?",["Uma semana","Pelo menos três meses","Até à primeira perda","Um dia"],1,"Mudar sempre impede de saber o que funciona."]],
+t1:[["Onde deve confirmar a licença de uma corretora?",["No site da corretora","No site do próprio regulador","Num grupo de WhatsApp","Na publicidade"],1,"O site da corretora pode mostrar informação falsa ou de outra entidade."],
+ ["Porque desconfiar de bónus de depósito?",["São ilegais","Costumam vir com condições que impedem levantar o dinheiro","Aumentam o spread","Reduzem a alavancagem"],1,"Escolha a corretora pela regulação e custos, não pelo bónus."],
+ ["O que fazer antes de depositar um valor maior?",["Pedir alavancagem 1:1000","Depositar pouco e fazer um levantamento de teste","Activar todos os bónus","Abrir várias contas"],1,"Saber que consegue tirar o dinheiro vale mais do que qualquer promoção."]],
+t2:[["Para que serve a conta demo?",["Ganhar dinheiro real","Aprender a mecânica e testar o plano sem risco","Evitar impostos","Receber bónus"],1,"Dinheiro fictício com preços reais."],
+ ["Numa conta raw, 1 lote com spread 0.2 pips e comissão $7 custa quanto?",["$2","$7","$9","$12"],2,"0.2 pips = $2, mais $7 de comissão = $9."],
+ ["Qual o percurso recomendado?",["Real grande logo no início","Demo → cent ou valor pequeno → aumentar só após 3 meses consistentes","Cent → demo → real","Só demo para sempre"],1,"Cada fase prova uma coisa diferente."]],
+t3:[["Que função do TradingView é ideal para backtest manual?",["Alertas","Replay de barras","Screener","Notícias"],1,"Recua no tempo e avança vela a vela."],
+ ["Onde vê o tamanho do contrato e o valor do tick no MT5?",["No histórico","Na Especificação do instrumento","No calendário","Nas notícias"],1,"Botão direito no par → Especificação."],
+ ["Em que fuso deve configurar o gráfico?",["UTC−5","UTC+2 (Maputo)","Hora de Tóquio","Tanto faz"],1,"Assim as killzones ficam sempre às mesmas horas no seu ecrã."]],
+t4:[["NFP real 250K, previsto 180K. O que tende a acontecer ao EUR/USD?",["Subir","Cair, porque o dólar valoriza","Ficar igual","Fechar o mercado"],1,"Dados fortes nos EUA fortalecem o dólar."],
+ ["Que filtro usar no calendário?",["Todas as moedas e impactos","As moedas que opera e impacto alto","Só impacto baixo","Só o JPY"],1,"Concentre-se no que move os seus pares."],
+ ["O que move o preço numa notícia?",["O valor anterior","A surpresa face ao previsto","A hora da publicação","O nome do indicador"],1,"O previsto já está no preço."]],
+t5:[["Quanto tempo dura a rotina de preparação proposta?",["2 minutos","Cerca de 20 minutos","3 horas","Não há rotina"],1,"Das 08:00 às 08:20, antes da killzone."],
+ ["O que se marca às 08:15?",["As notícias da semana","A faixa asiática e o máximo e mínimo do dia anterior","Os resultados de ontem","O spread"],1,"São as liquidezes mais próximas para o dia."],
+ ["O que se faz na killzone?",["Procurar setups novos à pressa","Executar só o que está no plano escrito","Ler notícias","Mudar de estratégia"],1,"O plano foi feito a frio, antes da sessão."]],
+b1:[["Como é gerado o preço do Boom & Crash?",["Por bancos","Por um algoritmo que simula um mercado","Pela oferta e procura real","Pelo banco central"],1,"São índices sintéticos."],
+ ["O que passa a fazer parte da análise no forex e não existia nos sintéticos?",["Velas","O horário e o calendário económico","O stop loss","O MT5"],1,"O mesmo setup às 10:00 e às 23:00 tem probabilidades diferentes."],
+ ["O forex abre ao fim-de-semana?",["Sim, 7 dias","Não, fecha e pode haver gap ao domingo","Só ao sábado","Só para ouro"],1,"Pode abrir com gap entre sexta e domingo."]],
+b2:[["Que hábito dos sintéticos deve abandonar?",["Usar stop loss","Contar velas à espera do spike","Ler suportes","Usar o MT5"],1,"No forex não há spikes programados."],
+ ["Varrimento de liquidez e spike são a mesma coisa?",["Sim","Não: o varrimento acontece em sítios previsíveis, o spike é aleatório","Só no ouro","Só em H1"],1,"Topos e fundos iguais, faixa asiática, máximos do dia."],
+ ["O que acontece ao martingale num mercado com tendências longas?",["Funciona melhor","Pode acabar com a conta","Fica mais barato","Não tem efeito"],1,"Dobrar o lote contra uma tendência longa é fatal."]],
+b3:[["Com 0.20 lote em EUR/USD, quanto vale 1 pip?",["$0.20","$2","$20","$0.02"],1,"0.20 × $10 = $2."],
+ ["Conta $300, risco 1 %, stop 20 pips em EUR/USD. Que lote?",["0.01","0.02","0.15","0.20"],0,"$3 ÷ (20 × $10) = 0.015 → 0.01 (para baixo)."],
+ ["Como deve arredondar o lote calculado?",["Para cima","Para baixo","Para o inteiro","Não arredonda"],1,"Para não arriscar mais do que o planeado."]],
+b4:[["Quantas operações em demo pede o plano antes da conta real?",["5","Pelo menos 40","1 000","Nenhuma"],1,"Com as mesmas regras e mais de 90 % dentro do plano."],
+ ["Que drawdown máximo é aceitável para avançar?",["Menos de 10 %","Até 50 %","Qualquer um","Mais de 30 %"],0,"Perda acumulada inferior a 10 %."],
+ ["Com que risco começar no primeiro mês real?",["2 %","0.5 % com micro lotes","5 %","10 %"],1,"Dinheiro real traz emoções novas: comece pequeno."]],
+b5:[["Quanto vale 1 pip do ouro (0.10) com 1 lote?",["$1","$10","$100","$0.10"],1,"100 onças × 0.10 = $10."],
+ ["Que risco usar no ouro nos primeiros meses?",["O dobro do EUR/USD","Metade do risco usado em EUR/USD","O mesmo","Sem limite"],1,"O ouro move-se muito mais."],
+ ["Que ferramenta usar para o stop no ouro?",["Um stop fixo de 30 pips","O ATR","O RSI","Nenhuma"],1,"Um stop de 30 pips no ouro é apenas ruído."]],
+p1:[["O que mostra um pavio inferior comprido?",["Força dos vendedores","Que os compradores rejeitaram preços baixos","Indecisão total","Que o mercado fechou"],1,"Os vendedores empurraram, os compradores devolveram."],
+ ["O que é um doji?",["Corpo muito grande","Corpo muito pequeno: indecisão","Vela sem pavios","Vela de notícias"],1,"Sozinho não diz nada."],
+ ["Quando tem significado um martelo?",["Em qualquer sítio","Num suporte forte, a favor da tendência","No meio do range","Só no D1"],1,"Uma vela só vale no sítio certo."]],
+p2:[["Que topos e fundos definem uma tendência de alta?",["LH e LL","HH e HL","Topos iguais","Fundos iguais"],1,"Higher highs e higher lows."],
+ ["Em que timeframe começa a identificar a tendência?",["M1","H4, vendo 2 a 3 meses","Tick","M5"],1,"Afaste o zoom no H4."],
+ ["Não consegue dizer a direcção em 10 segundos. O que faz?",["Opera na mesma","Considera o par lateral e escolhe outro","Muda para M1","Usa mais indicadores"],1,"Se não é óbvio, não é tendência."]],
+p3:[["Como se desenha suporte e resistência?",["Uma linha exacta no fecho","Uma zona que cobre pavios e corpos das reacções","Uma média móvel","Um ponto"],1,"São zonas, não linhas exactas."],
+ ["O que acontece a uma zona a cada novo toque?",["Fica mais forte para sempre","Gasta-se: ao 3.º ou 4.º toque, o rompimento fica mais provável","Desaparece","Muda de cor"],1,"Cada toque consome ordens."],
+ ["Que níveis marcar no início de cada semana?",["Os da sessão asiática","Máximo e mínimo da semana e do dia anterior","Os do M1","Nenhum"],1,"São muito usados por traders institucionais."]],
+p4:[["Qual a proporção mínima do pavio num pin bar?",["Igual ao corpo","Pelo menos o dobro do corpo","Metade do corpo","Sem pavio"],1,"Pavio comprido, corpo pequeno perto do extremo."],
+ ["O que define um engolfo de alta?",["Vela verde menor que a anterior","Corpo verde que cobre todo o corpo vermelho anterior","Duas velas iguais","Vela com pavio superior"],1,"Os compradores tomaram o controlo."],
+ ["Como se entra num inside bar?",["No meio da vela","No rompimento da vela-mãe, a favor da tendência","Antes de fechar","Nunca"],1,"Inside bar é pausa: espere o rompimento."]],
+p5:[["O que valida um rompimento?",["Um pavio do outro lado","Fecho de corpo forte do outro lado da zona","Um toque","Uma notícia"],1,"Só o pavio não conta."],
+ ["Qual a entrada mais segura num rompimento?",["Na vela de rompimento esticada","No reteste da zona rompida, com confirmação","Antes do rompimento","No dia seguinte sempre"],1,"Espere o regresso à zona."],
+ ["Como se chama o falso rompimento no SMC?",["BOS","Varrimento de liquidez","FVG","Order block"],1,"Apanha os stops e volta para dentro."]],
+p7:[["O que confirma um duplo topo?",["O segundo topo","Fecho abaixo do fundo entre os dois topos (linha do pescoço)","Uma vela verde","O RSI"],1,"Sem quebrar o pescoço, é só um range."],
+ ["Duplo topo com 60 pips de altura. Onde fica o alvo medido?",["60 pips acima do topo","60 pips abaixo da linha do pescoço","30 pips abaixo","No topo"],1,"Projecta-se a altura a partir do rompimento."],
+ ["A bandeira é um padrão de...",["Inversão","Continuação","Indecisão","Notícia"],1,"Pequena correcção depois de um impulso forte."]],
+p8:[["Como reconhece um mercado lateral?",["Topos e fundos a subir","Pelo menos dois toques em cima e dois em baixo, médias planas","Uma vela grande","Spread alto"],1,"O preço oscila entre suporte e resistência."],
+ ["Como se opera um range?",["Comprar no topo, vender no fundo","Comprar perto do fundo, vender perto do topo, stop fora da faixa","Só rompimentos","Sem stop"],1,"Ou esperar pelo rompimento."],
+ ["Qual a principal causa de perdas seguidas no range?",["Usar stop","Aplicar estratégias de tendência num mercado lateral","Operar pouco","Usar o H4"],1,"Se o H4 está em range, reduza ou fique de fora."]],
+p6:[["Onde se espera a entrada no pullback em tendência?",["No topo da tendência","Num recuo até um suporte, resistência rompida ou linha de tendência","No meio do impulso","Em qualquer vela verde"],1,"Compra-se barato dentro da tendência."],
+ ["Onde fica o stop?",["Acima do topo","Abaixo do mínimo do padrão + 3 pips","No preço de entrada","Sem stop"],1,"Se o preço volta abaixo do padrão, a ideia caiu."],
+ ["Qual o RR mínimo para entrar?",["1:0.5","1:1","1:2","Não importa"],2,"Até ao último topo tem de haver pelo menos 2R."]],
+i1:[["Qual a diferença entre SMA e EMA?",["Nenhuma","A EMA dá mais peso aos fechos recentes","A SMA é mais rápida","A EMA só existe no MT4"],1,"A EMA reage mais depressa."],
+ ["EMA 20 abaixo da EMA 50 e preço abaixo das duas. Que leitura?",["Alta","Baixa: só vendas","Lateral","Notícia"],1,"Tendência de baixa."],
+ ["Porque não usar o cruzamento das médias como entrada?",["É ilegal","Chega tarde","É muito cedo","Não funciona no H4"],1,"Use as médias como filtro de direcção."]],
+i2:[["O preço faz fundo mais baixo e o RSI fundo mais alto. O que é?",["Divergência de alta","Divergência de baixa","Sobrecompra","Nada"],0,"A venda está a perder força."],
+ ["Deve vender só porque o RSI passou 70?",["Sim","Não: em tendência forte o RSI pode ficar acima de 70 dias","Só no ouro","Só em H1"],1,"Sobrecomprado não é sinal de venda sozinho."],
+ ["Quando é a divergência mais útil?",["Sozinha","Junto a um varrimento de liquidez dentro de uma zona do H4","Antes das notícias","No M1"],1,"É confluência, não sinal único."]],
+i3:[["O que mede o ATR?",["A direcção","O tamanho médio do movimento por vela","O volume","O spread"],1,"Não diz a direcção."],
+ ["ATR do H1 = 12 pips. Qual o stop mínimo sugerido?",["6 pips","12 pips","18 pips","60 pips"],2,"1.5 × ATR = 18 pips."],
+ ["O ATR está a subir. O que fazer?",["Aumentar o lote","Stops maiores e lotes menores","Tirar o stop","Nada"],1,"Mesmo risco em dólares, mais espaço para o ruído."]],
+i4:[["Que zona do Fibonacci é a OTE?",["23.6–38.2 %","50 %","61.8–78.6 %","100 %"],2,"A zona preferida para entradas."],
+ ["Para que servem as extensões de 127.2 % e 161.8 %?",["Para entradas","Para alvos além do último topo","Para o stop","Para o lote"],1,"Projectam alvos."],
+ ["Como se traça o Fibonacci numa compra?",["Do topo ao fundo","Do fundo ao topo do impulso","Entre duas notícias","Na horizontal"],1,"Mede o recuo do impulso de alta."]],
+i5:[["O que mostra o volume no MT5?",["O volume real do mercado","O tick volume: número de mudanças de preço","O número de traders","O spread"],1,"Não é o volume real, mas acompanha a actividade."],
+ ["Rompimento com volume baixo. O que pensar?",["É muito forte","Desconfiar","Entrar com o dobro","Nada"],1,"Sem actividade, o rompimento é suspeito."],
+ ["O que reforça um varrimento de liquidez?",["Volume baixo","Pico de volume com rejeição","Spread zero","Uma média móvel"],1,"Mostra ordens grandes no nível."]],
+i6:[["Quantos indicadores no máximo sugere o curso?",["1","2 a 3, com funções diferentes","5 ou mais","10"],1,"Direcção, volatilidade e, opcionalmente, força."],
+ ["Porque não juntar RSI, Estocástico, CCI e MACD?",["São caros","Medem quase o mesmo e criam dúvida quando discordam","São ilegais","Não existem no MT5"],1,"Mais osciladores não dão mais informação."],
+ ["Quem decide a operação?",["Os indicadores","O preço e a estrutura; os indicadores confirmam","O volume","As notícias"],1,"Indicadores são confirmação."]],
+s1:[["Onde se acumulam os stops dos pequenos traders?",["No meio do range","Abaixo de fundos e acima de topos","Nas médias móveis","Em lado nenhum"],1,"São a liquidez que as instituições procuram."],
+ ["Qual é o objectivo do trader SMC?",["Ser a liquidez","Entrar depois do varrimento, ao lado do dinheiro grande","Operar contra os bancos","Evitar stops"],1,"Entrar depois de os stops serem apanhados."],
+ ["O SMC garante resultados?",["Sim","Não: é uma forma de ler o price action que deve ser testada","Só no ouro","Só em H4"],1,"Confirme sempre no seu backtest."]],
+s0:[["O que é o CHoCH?",["Quebra a favor da tendência","Primeira quebra contra a tendência","Um FVG","Topos iguais"],1,"Avisa que a direcção pode mudar."],
+ ["O que representam topos iguais?",["Força","Liquidez: stops acumulados acima","Fim do mercado","Um FVG"],1,"O preço vai muitas vezes buscá-los."],
+ ["O que é um imbalance?",["Uma vela pequena","Movimento tão rápido que deixa espaço sem negociação","Um suporte","Uma notícia"],1,"É o mesmo que FVG."]],
+s2:[["Estrutura de alta e fecho acima do último topo. O que é?",["CHoCH","BOS de alta","Varrimento","FVG"],1,"Quebra a favor da tendência."],
+ ["Só o pavio passou o swing. Como interpretar?",["BOS confirmado","Provavelmente um varrimento de liquidez","CHoCH","Nada"],1,"Conte só fechos de corpo."],
+ ["Para que serve o CHoCH no timeframe baixo?",["Para o lote","Como confirmação de entrada dentro de uma zona do H4","Para o swap","Para o alvo"],1,"Mudança de carácter no M5/M15 dentro da zona."]],
+s3:[["Onde está a liquidez de compra (buy-side)?",["Abaixo de fundos","Acima de topos, sobretudo topos iguais","No meio","Nas médias"],1,"Stops de quem vendeu."],
+ ["A liquidez serve para...",["Só alvo","Alvo e gatilho de inversão","Só stop","Nada"],1,"O preço vai buscá-la e muitas vezes inverte depois."],
+ ["Qual destes é um local clássico de liquidez?",["O meio da vela","O máximo e mínimo da sessão asiática","O valor do RSI","O swap"],1,"Também o máximo e mínimo do dia anterior."]],
+s4:[["O que é um order block de alta?",["A primeira vela verde","A última vela de baixa antes de um impulso de alta que quebrou estrutura","Qualquer suporte","Um FVG"],1,"Zona onde as instituições entraram."],
+ ["Que característica tem um order block válido?",["Já foi tocado várias vezes","Causou BOS ou CHoCH e deixou FVG","Está em premium para compras","É uma vela pequena"],1,"E ainda não foi mitigado."],
+ ["Onde fica o stop numa compra num order block?",["Acima do bloco","Abaixo do mínimo do order block","No meio","Sem stop"],1,"Se o bloco é quebrado, a ideia falhou."]],
+s5:[["Como se forma um FVG de alta?",["Máximo da vela 1 abaixo do mínimo da vela 3","Três velas vermelhas","Uma vela com pavio","Topos iguais"],0,"Fica um intervalo sem negociação dos dois lados."],
+ ["Quando falha um FVG?",["Quando é tocado","Quando o preço fecha com corpo do outro lado","Nunca","Depois de 1 hora"],1,"Fecho do outro lado invalida."],
+ ["Onde se entra num FVG?",["Fora dele","No início ou no ponto médio (50 %)","Só no fim","Antes de se formar"],1,"Ordem limite no FVG."]],
+s6:[["Para compras, em que zona procurar entradas?",["Premium","Discount (abaixo de 50 %)","No topo","Não importa"],1,"Compre barato."],
+ ["Swing de 1.0800 a 1.0900. Onde fica o equilíbrio?",["1.0820","1.0850","1.0880","1.0900"],1,"50 % do swing."],
+ ["Que níveis formam a OTE?",["0–23.6 %","38.2–50 %","62–79 %","100–127 %"],2,"Optimal Trade Entry."]],
+s8:[["O que é o inducement?",["Uma zona forte","Liquidez pequena e óbvia antes da zona verdadeira","Um BOS","Um FVG"],1,"Atrai entradas cedo demais."],
+ ["Que zonas preferir para compras?",["Com inducement por cima ainda intacto","Com o inducement por cima já varrido","Sem estrutura","Em premium"],1,"Se ainda não foi tomado, espere."],
+ ["No exemplo, porque cai o preço de 1.0815 até 1.0800?",["Notícia","Para varrer os stops dos compradores antecipados antes do order block","Erro","Fim de sessão"],1,"Depois sobe a partir do order block."]],
+s9:[["Como se forma um breaker block?",["Um order block que segura","Um order block rompido depois de um varrimento de liquidez","Um FVG preenchido","Um doji"],1,"Passa a funcionar no sentido oposto."],
+ ["Diferença entre breaker e mitigation block?",["Nenhuma","O mitigation forma-se sem varrimento prévio e é considerado mais fraco","O breaker é mais fraco","O mitigation só existe no ouro"],1,"Varrimento antes faz o breaker."],
+ ["O que é deslocamento (displacement)?",["Velas pequenas","Velas fortes e seguidas que criam FVG e quebram estrutura","Mudança de corretora","Swap"],1,"Sem deslocamento, o CHoCH é menos fiável."]],
+s10:[["Quais são as fases do Power of 3?",["Compra, venda, espera","Acumulação, manipulação, distribuição","Ásia, Europa, EUA","Abertura, fecho, swap"],1,"AMD."],
+ ["O que é o Judas swing?",["O movimento real","Movimento falso no início de Londres contra a direcção do dia","Uma notícia","Fecho semanal"],1,"Varre um lado da faixa asiática."],
+ ["Num dia de alta, como costuma ser a vela diária?",["Abre e sobe sem recuar","Abre, desce (manipulação) e depois sobe e fecha perto do máximo","Fecha em baixo","Doji"],1,"É o que o Modelo A tenta apanhar."]],
+s11:[["O que é o bias diário?",["O spread do dia","A expectativa de direcção para o dia","O lucro diário","O ATR"],1,"Definido pela estrutura e liquidez."],
+ ["O que significam PDH e PDL?",["Pip diário","Máximo e mínimo do dia anterior","Preço de entrada","Lote"],1,"Liquidez óbvia para o dia."],
+ ["O que é uma divergência SMT?",["Entre RSI e preço","Entre pares correlacionados, por exemplo EUR/USD faz fundo mais baixo e GBP/USD não","Entre duas corretoras","Entre sessões"],1,"Mostra fraqueza no movimento."]],
+s7:[["Qual é o primeiro passo da narrativa?",["O gatilho","A direcção no H4/D1","O lote","O alvo"],1,"Depois vem a liquidez alvo e a zona."],
+ ["Qual é o gatilho da entrada?",["Uma notícia","Varrimento do lado oposto + CHoCH no M5/M15 na killzone","Um cruzamento de médias","RSI 30"],1,"Na zona de interesse."],
+ ["Quando não há operação?",["Quando o spread é baixo","Quando não consegue contar a história em duas frases","Quando é segunda","Nunca"],1,"Sem narrativa clara, fique de fora."]],
+o1:[["O que é uma zona de procura?",["Base de onde o preço saiu a descer","Base de onde o preço saiu a subir","Qualquer suporte","Um topo"],1,"No regresso procura-se compra."],
+ ["Numa zona de procura, o que é a linha proximal?",["O pavio mais baixo","O topo dos corpos da base: onde fica a entrada","O máximo do impulso","A média"],1,"O lado mais perto do preço actual."],
+ ["Diferença entre zona e order block?",["Nenhuma","A zona usa a base inteira; o order block só a última vela contrária","O order block é maior","A zona só existe em D1"],1,"A zona é mais larga e apanha mais reacções."]],
+o2:[["Rally, base, queda. Que padrão é?",["RBR","RBD","DBR","DBD"],1,"Zona de oferta de inversão."],
+ ["Quais são os padrões de continuação?",["RBD e DBR","RBR e DBD","Só DBD","Só RBR"],1,"O preço continua na mesma direcção."],
+ ["Pela regra rápida, o que indica a última letra?",["O timeframe","A operação: R = compra, D = venda","O lote","O par"],1,"Termina em rally: procura e compra."]],
+o3:[["Onde aparecem as zonas de inversão?",["A meio de uma tendência","No topo ou no fundo de um swing","Só no ouro","Em notícias"],1,"Mudança de controlo."],
+ ["Onde fica o stop numa zona?",["Na linha proximal","Para lá da linha distal, mais o spread","No meio da zona","No alvo"],1,"Se a distal é quebrada, a zona falhou."],
+ ["Zona muito larga. Que soluções sugere o curso?",["Aumentar o lote","Descer de timeframe ou entrar aos 50 % da zona","Tirar o stop","Ignorar o risco"],1,"Stop mais curto, mesmo risco."]],
+o4:[["Quantos pontos tem uma zona forte na pontuação?",["3 ou mais","6 a 8","9 ou mais","Qualquer"],2,"Entre 6 e 8 é média: metade do risco."],
+ ["Qual o reteste mais forte de uma zona?",["O terceiro","O primeiro","O quinto","Todos iguais"],1,"Cada regresso consome ordens."],
+ ["Que erro gera ecrãs cheios de rectângulos?",["Usar poucos timeframes","Marcar zonas em todas as bases","Usar stop","Usar o H4"],1,"Marque só bases de onde saiu um movimento claro."]],
+o5:[["Qual o reteste mais fundo, com melhor RR?",["Criação de procura","Reteste da estrutura","Reteste da procura de origem","Nenhum"],2,"Mas muitas vezes o preço não chega lá."],
+ ["O preço faz uma pausa acima do nível rompido e sobe. Que tipo é?",["Reteste da estrutura","Procura de origem","Criação de nova procura","Falso rompimento"],2,"Forma uma nova base."],
+ ["Como lidar com a dúvida entre retestes?",["Não operar nunca","Dividir: metade no nível rompido, metade na procura de origem","Dobrar o lote","Entrar sem stop"],1,"Com o stop comum abaixo da origem."]],
+o6:[["Porque um imbalance à saída da base reforça a zona?",["Não reforça","Mostra ordens grandes que ficaram por preencher","Diminui o spread","Aumenta o swap"],1,"É o sinal mais claro de dinheiro grande."],
+ ["Zona com saída lenta e velas pequenas é...",["Forte","Fraca","Perfeita","Inválida sempre"],1,"Provavelmente não havia ordens grandes."],
+ ["O imbalance está entre o preço e a zona. O que pode acontecer?",["O preço salta a zona","O preço volta primeiro ao imbalance e só depois à zona","Nada","O par fecha"],1,"Veja se o imbalance segura ou é atravessado."]],
+o7:[["Nos exemplos reais, onde é a entrada?",["No fim da base","No primeiro regresso à linha proximal","No topo","Aleatória"],1,"Com stop além da distal e alvo a 2R."],
+ ["O que confirma o exemplo DBR em GBP/USD?",["A zona nunca é retestada","O preço voltou à zona mais de um dia depois e reagiu","A zona falhou","Não houve impulso"],1,"Zonas podem ser retestadas dias depois."],
+ ["Nos exemplos, qual é o alvo?",["1R","2R","5R","Sem alvo"],1,"Duas vezes o risco."]],
+o8:[["Que forma de regresso à zona é sinal de alerta?",["Lenta e em escada","Com velas fortes e seguidas, sem abrandar","Com doji","Nenhuma"],1,"Momentum forte pode atravessar a zona."],
+ ["Porque desconfiar de topos iguais logo acima de uma oferta?",["São bonitos","O preço pode atravessar a zona só para ir buscar essa liquidez","Reduzem o spread","Não há motivo"],1,"Liquidez óbvia atrai o preço."],
+ ["O que limitou a perda no exemplo que falhou?",["A sorte","O stop: perda de 1R","O swap","A notícia"],1,"Por isso o stop é obrigatório."]],
+o9:[["Quantas zonas reais foram testadas?",["27","275","2 750","27 500"],1,"De 2015 a 2022."],
+ ["Que resultado teve a abordagem mecânica?",["Muito positiva","Ligeiramente negativa (−0.15R)","+1R","Zero exacto"],1,"Sozinho, o padrão não chega."],
+ ["Nesta amostra, que zonas se comportaram melhor?",["Continuação","Inversão (RBD e DBR), perto do equilíbrio","Todas iguais","Nenhuma"],1,"As de continuação foram claramente piores."]],
+o10:[["Onde procurar compras na estratégia de oferta e procura?",["Em zonas de oferta em premium","Em zonas de procura em discount","Em qualquer zona","No topo"],1,"Localização certa no swing."],
+ ["Quando se cancela a zona?",["Nunca","Se o preço a quebrar com fecho de corpo ou a tocar sem executar a ordem","Ao fim de 1 hora","Depois do almoço"],1,"Risque-a."],
+ ["No exemplo GBP/USD, qual o RR?",["1:1","1:2","1:3.3","1:5"],2,"30 pips de risco para 98 de alvo."]],
+a1:[["Juros mais altos tendem a...",["Enfraquecer a moeda","Fortalecer a moeda","Não ter efeito","Fechar o mercado"],1,"Atraem capital."],
+ ["Porque chegou o EUR/USD abaixo de 1.00 em 2022?",["Erro","A Fed subiu juros muito mais depressa do que o BCE","O euro desapareceu","Feriado"],1,"Diferença de juros."],
+ ["O que move muitas vezes mais do que a decisão?",["O nome do banco","O tom da conferência de imprensa","O spread","O swap"],1,"Mais agressivo ou mais suave."]],
+a2:[["Quando sai o NFP?",["Segunda-feira","Primeira sexta-feira do mês","Último dia do mês","Domingo"],1,"Por volta das 15:30 de Maputo (14:30 no Verão dos EUA)."],
+ ["O que mede o CPI?",["Emprego","Inflação","PIB","Vendas"],1,"Inflação ao consumidor."],
+ ["Porque confirmar as horas no calendário?",["Por hábito","EUA e Europa mudam a hora em datas diferentes","O calendário mente","Não é preciso"],1,"Durante semanas os horários desalinham."]],
+a3:[["O que fazer 30 minutos antes de uma notícia forte?",["Abrir novas posições","Não abrir novas e proteger as abertas","Duplicar o lote","Tirar os stops"],1,"O spread vai alargar."],
+ ["O que é slippage?",["Spread zero","Execução a preço pior do que o pedido","Um tipo de ordem","Um indicador"],1,"Acontece nas notícias."],
+ ["Quando podem surgir bons setups depois da notícia?",["No próprio segundo","15 a 30 minutos depois, quando a estrutura se forma","Nunca","No dia seguinte"],1,"Depois do varrimento inicial dos dois lados."]],
+a4:[["Comprar EUR/USD e USD/CHF ao mesmo tempo...",["Dobra o risco","Tende a cancelar-se (correlação negativa)","Não tem efeito","É obrigatório"],1,"Movem-se em sentidos opostos."],
+ ["Em risk-off, que moedas tendem a subir?",["AUD e NZD","USD, JPY e CHF","Só o AUD","Nenhuma"],1,"Refúgios."],
+ ["Duas compras a 1 % em EUR/USD e GBP/USD equivalem a...",["0.5 % de risco","Cerca de 2 % na mesma ideia","1 %","Zero"],1,"Correlação positiva forte."]],
+e1:[["Para que serve o timeframe alto?",["Para o quando","Para o que fazer: direcção e zonas","Para o lote","Para o spread"],1,"O baixo decide quando."],
+ ["Que combinação de timeframes é sugerida?",["D1 → M1","H4 → H1 → M15","M1 → M5","W1 → MN"],1,"Relação de 1 para 4 a 6."],
+ ["Na rotina das 08:00, o que se marca no H4?",["Notícias","Zonas como FVG por preencher em discount","O spread","O swap"],1,"E a faixa asiática no H1."]],
+e2:[["Primeiro passo do Modelo A na killzone?",["Comprar logo","Varrimento do mínimo asiático","Notícia","Doji"],1,"Depois vem o CHoCH."],
+ ["Onde se coloca a ordem no Modelo A?",["No varrimento","Buy limit no FVG criado pelo impulso","No topo","Aleatória"],1,"No exemplo, 1.0826."],
+ ["Erro comum no Modelo A?",["Esperar o CHoCH","Entrar no varrimento sem esperar o CHoCH","Usar stop","Usar alvo"],1,"O varrimento pode ser o início da descida."]],
+e2r:[["No exemplo real do Modelo A, o que aconteceu?",["Stop atingido","Alvo atingido: +2R","Nada","Notícia"],1,"Este exemplo correu bem."],
+ ["Quantas situações semelhantes foram testadas nos dados reais?",["22","Cerca de 2 200","50","10"],1,"A versão mecânica ficou perto de zero."],
+ ["O que separa um setup médio de um bom?",["O par","As confluências: zona do H4, FVG, bias, notícias","A cor das velas","O lote"],1,"O padrão sozinho não chega."]],
+e3:[["Porque o Modelo B é bom para começar?",["Ganha sempre","É mais simples de reconhecer","Não precisa de stop","Usa M1"],1,"Price action puro."],
+ ["Que filtro faz parte do Modelo B?",["Notícia a sair já","A vela fecha dentro da killzone","Spread alto","RSI 90"],1,"Mais volume, menos sinais falsos."],
+ ["Que confirmação se espera no H1?",["Cruzamento de médias","Engolfo ou pin bar a favor da tendência","Doji","Gap"],1,"Na zona do H4."]],
+e5b:[["Como começa o rompimento de Londres?",["Comprar às 09:00","Marcar o máximo e mínimo asiáticos e pôr ordens stop 3 pips além","Vender às 12:00","Ler notícias"],1,"Quando uma é activada, cancela a outra."],
+ ["Que filtro evita o Judas swing?",["Spread","Só aceitar o rompimento a favor do bias diário","RSI","Volume zero"],1,"Contra o bias, usa-se o Modelo A."],
+ ["Se nada for activado até às 12:00?",["Esperar até à noite","Cancelar tudo","Dobrar ordens","Entrar a mercado"],1,"A janela passou."]],
+e5d:[["Que condição permite só compras?",["EMA 20 abaixo da EMA 50","EMA 20 acima da EMA 50 e preço acima das duas","Preço abaixo das médias","Médias planas"],1,"Tendência de alta."],
+ ["Onde se espera a entrada?",["Longe das médias","No recuo entre a EMA 20 e a EMA 50","No cruzamento","Ao fim do dia"],1,"Com engolfo ou pin bar no H1."],
+ ["Quando mover o stop para a entrada?",["Logo ao entrar","Ao atingir 1R","Nunca","No alvo"],1,"Regra da estratégia."]],
+e5e:[["Quanto tempo por noite pede o swing trading?",["4 horas","Cerca de 20 minutos","Nenhum","Toda a noite"],1,"Ordens pendentes trabalham sozinhas."],
+ ["Conta $1 000, risco 1 %, stop 60 pips. Que lote?",["0.01","0.10","0.16","1.00"],0,"$10 ÷ (60 × $10) = 0.016 → 0.01."],
+ ["Que custo pesa mais no swing trading?",["Spread","Swap das noites em aberto","Comissão de depósito","Nenhum"],1,"Veja-o na especificação do par."]],
+e4:[["Onde colocar o stop?",["Num número redondo","Onde a ideia fica invalidada, com margem e spread","Muito perto para perder pouco","Sem stop"],1,"Abaixo do varrimento, order block ou padrão."],
+ ["Onde colocar o take profit?",["Aleatório","No próximo nível de liquidez oposta ou zona oposta","Sempre 10 pips","No preço de entrada"],1,"Topo anterior, máximo do dia, topos iguais."],
+ ["Erro comum com o stop?",["Usá-lo","Movê-lo para mais longe quando o preço se aproxima","Calculá-lo antes","Pô-lo além da zona"],1,"Aceite a perda pequena."]],
+e6b:[["Qual a desvantagem do break-even?",["Aumenta o risco","Fecha a zero muitas operações que teriam ganho","É ilegal","Aumenta o spread"],1,"Elimina o risco, mas tem custo."],
+ ["Como funciona o trailing stop?",["Stop fixo","O stop segue abaixo de cada novo fundo (HL)","Fecha tudo a 1R","Move o alvo"],1,"Apanha tendências longas."],
+ ["Regra da gestão?",["Mudar em cada operação","Usar sempre a mesma no backtest e no demo","Decidir pela emoção","Não gerir"],1,"Senão as estatísticas não valem."]],
+e5:[["8/8 na checklist significa...",["Não entrar","Setup A: risco normal","Metade do risco","Dobrar"],1,"Todos os critérios cumpridos."],
+ ["Que pontos são obrigatórios?",["Killzone e notícias","Stop com risco ≤ 1 % e RR ≥ 1:2","Varrimento","Tendência"],1,"Sem eles, não entre."],
+ ["Tem dúvidas num ponto. Como conta?",["Cumprido","Não cumprido","Meio ponto","Ignora"],1,"Regra da checklist."]],
+k1:[["Qual o primeiro passo do backtest?",["Escolher datas boas","Escrever as regras antes","Ver o gráfico completo","Usar o M1"],1,"Se uma regra precisa de sentir, não está pronta."],
+ ["O que é o viés de retrospectiva?",["Medo de perder","Ver o gráfico completo e escolher só setups que funcionaram","Usar o H4","Operar demais"],1,"Use o replay com o futuro escondido."],
+ ["Quantas operações no mínimo?",["10","30","100","5 000"],2,"Em períodos diferentes."]],
+k2:[["Qual a taxa de acerto da versão mecânica do Modelo A?",["Cerca de 31 %","50 %","70 %","10 %"],0,"Com alvo 1:2 precisa de 33.3 % para empatar."],
+ ["O filtro de tendência do D1, sozinho...",["Resolveu tudo","Não fez diferença real","Piorou muito","Não foi testado"],1,"A favor −0.03R, contra +0.01R."],
+ ["Qual a lição do backtest real?",["O Modelo A não serve","Um modelo bonito em exemplos pode não ter vantagem em milhares de casos","Só o ouro funciona","Não é preciso testar"],1,"Teste tudo no seu backtest."]],
+k3:[["42 ganhos de +2.1R e 58 perdas de −1R. Expectativa?",["−0.30R","+0.03R","+0.30R","+0.88R"],2,"0.42 × 2.1 − 0.58 = 0.30R."],
+ ["Que profit factor é bom?",["Abaixo de 1","Acima de 1.3","Exactamente 1","Não importa"],1,"Lucro bruto ÷ perda bruta."],
+ ["Que drawdown máximo de referência?",["Abaixo de 15 %","50 %","Qualquer","Acima de 30 %"],0,"Prepare-se para o dobro da maior sequência de perdas na conta real."]],
+k4:[["O que prova o demo (forward test)?",["Que a estratégia é perfeita","Que consegue executar as regras em tempo real","Que a corretora é boa","Nada"],1,"40+ operações, 90 % dentro das regras."],
+ ["Resultado em tempo real um pouco pior que o backtest é...",["Sinal de fraude","Normal: spread, atrasos e emoção","Impossível","Sinal para dobrar"],1,"Se for muito pior, reveja a execução."],
+ ["Quanto tempo na fase real pequena?",["1 dia","2 a 3 meses a 0.5 %","1 semana a 5 %","Não há"],1,"Prova que consegue com emoção real."]],
+k5:[["Quantas páginas deve ter o plano?",["Uma","Cinquenta","Nenhuma","Dez"],0,"Curto e prático."],
+ ["O que vai na secção 'Não opero quando…'?",["Os pares","Notícias fortes, após 2 perdas, cansado, fora do horário","O lote","O alvo"],1,"Regras de protecção."],
+ ["Quando ler a secção Setup?",["Uma vez por ano","Antes de cada operação","Depois de perder","Nunca"],1,"Tenha o plano visível."]],
+k6:[["Quantos pontos a melhorar escolher por semana?",["Nenhum","Um","Cinco","Todos"],1,"Um de cada vez."],
+ ["O que marcar no domingo?",["Só notícias","Zonas e liquidez do D1 e H4, notícias e bias de cada par","Só o lucro","Nada"],1,"Preparação da semana."],
+ ["Primeira tarefa da rotina semanal?",["Abrir operações","Rever as operações da semana no diário","Mudar de estratégia","Ver notícias"],1,"Quantas seguiram as regras?"]],
+r1:[["Após 10 perdas seguidas a 1 %, a conta cai cerca de...",["1 %","9.6 %","50 %","100 %"],1,"0.99 elevado a 10."],
+ ["Após 10 perdas a 10 %, quanto precisa de ganhar para recuperar?",["10 %","66.9 %","+186.8 %","100 %"],2,"Por isso o risco alto é fatal."],
+ ["Que risco nos primeiros meses de conta real?",["0.5 % a 1 %","5 %","10 %","20 %"],0,"Nunca mais de 2 %."]],
+r2:[["Com RR 1:2, que taxa de acerto empata?",["50 %","33 %","25 %","10 %"],1,"Uma vitória paga duas perdas."],
+ ["40 % de acerto com RR 1:2 em 100 operações de $10 dá...",["−$200","+$200","Zero","+$800"],1,"+$800 − $600 = +$200."],
+ ["O que precisa para ganhar?",["Acertar sempre","Cortar perdas pequenas e deixar ganhos chegar ao alvo, repetindo o processo","Operar muito","Alavancagem alta"],1,"Processo repetido."]],
+r3:[["O que registar no diário?",["Só o lucro","Entrada, stop, alvo, risco, modelo, imagem, resultado em R e emoção","Só as perdas","Nada"],1,"Dados completos."],
+ ["Deve registar as operações em demo?",["Não","Sim","Só as ganhas","Só as perdidas"],1,"Também contam."],
+ ["Que pergunta fazer na revisão semanal?",["Quanto ganhei?","Em que sessão ganho mais e que erro se repete?","Que corretora mudar?","Que par está na moda?"],1,"Os dados ensinam."]],
+r4:[["Qual o limite de operações por dia proposto?",["1","2","10","Sem limite"],1,"Evita overtrading."],
+ ["O que fazer depois de uma perda, para evitar vingança?",["Abrir outra logo","Levantar-se da cadeira 15 minutos","Dobrar o lote","Tirar o stop"],1,"Arrefecer."],
+ ["Que promessa deve fazer desconfiar?",["Gestão de risco","Lucro garantido","Backtest","Diário"],1,"Ninguém garante resultados no forex."]],
+r6:[["4 perdas seguidas seguindo as regras. O que fazer?",["Mudar de estratégia","Nada: é variância, continue","Parar de operar para sempre","Dobrar o lote"],1,"Sequências de 6 a 8 perdas são normais com 40 % de acerto."],
+ ["Quando rever a estratégia?",["Após 1 semana má","50+ operações dentro das regras com expectativa negativa","Após 1 perda","Nunca"],1,"Mudando uma regra de cada vez."],
+ ["Perdas por quebrar regras indicam...",["Problema na estratégia","Problema de disciplina: volte ao demo uma semana","Azar","Nada"],1,"A estratégia não foi testada de verdade."]],
+c1:[["O que aconteceu em 15/01/2015 às 11:30 de Maputo?",["Brexit","O BNS removeu o limite de 1.20 no EUR/CHF","Eleições EUA","Pandemia"],1,"O franco valorizou cerca de 30 % em minutos."],
+ ["Porque muitos stops não protegeram?",["Estavam errados","Quase não houve preços e foram executados centenas de pips abaixo","A corretora fechou cedo","Era fim-de-semana"],1,"O stop não protege em eventos extremos."],
+ ["Que protecção procurar numa corretora?",["Bónus","Protecção contra saldo negativo","Alavancagem 1:1000","Spread zero"],1,"E regulação."]],
+c2:[["Quantos pips caiu a libra na noite do Brexit?",["Cerca de 180","Cerca de 1 800","Cerca de 18","Nenhum"],1,"De 1.5017 a 1.3229."],
+ ["O que fazer antes de eventos binários com data marcada?",["Abrir posição grande","Fechar ou reduzir","Tirar o stop","Nada"],1,"São apostas, não setups."],
+ ["O que mostrou a libra nos meses seguintes?",["Recuperação total","Tendência de baixa: o fundamental muda a direcção de fundo","Range perfeito","Nada"],1,"Depois do choque."]],
+c3:[["Até onde caiu o USD/JPY durante a contagem?",["101.19","118.70","106.90","95.00"],0,"Depois inverteu com força."],
+ ["Que lição tiramos?",["O primeiro movimento é sempre certo","O primeiro movimento pode ser um varrimento: espere a estrutura","Não operar JPY","Vender sempre"],1,"Como o Judas swing."],
+ ["Perto de que valor chegou o USD/JPY nas semanas seguintes?",["101","110","118.7","130"],2,"Forte tendência de alta."]],
+c4:[["Que mínimo fez o EUR/USD em 23 de Março de 2020?",["1.0636","1.1496","1.2000","0.9900"],0,"Corrida ao dólar."],
+ ["Que efeito tem uma crise no ATR?",["Diminui","Multiplica-se","Fica igual","Desaparece"],1,"Stops normais são atingidos pelo ruído."],
+ ["Em pânico, o dólar funciona como...",["Moeda fraca","Refúgio, mesmo com a crise nos EUA","Nada","Exótico"],1,"Todos precisam de dólares."]],
+c5:[["Porque caiu o ouro em Março de 2020?",["Deixou de ser refúgio","Os investidores venderam tudo para obter dinheiro","Erro","Feriado"],1,"Pânico de liquidez."],
+ ["Que recorde atingiu o ouro em Agosto de 2020?",["Cerca de 1 450","Cerca de 2 075","Cerca de 3 000","Cerca de 1 000"],1,"Juros reais muito baixos."],
+ ["O que esta história ensina sobre correlações?",["Nunca falham","Podem falhar durante o pânico de liquidez","Não existem","Só no ouro"],1,"As de manual nem sempre funcionam."]],
+c6:[["O que fez o ouro em 24/02/2022?",["Caiu o dia todo","Subiu de manhã até 1 974.5 e devolveu o ganho à tarde","Ficou parado","Fechou o mercado"],1,"Comprar o boato, vender o facto."],
+ ["Quem ficou preso?",["Quem esperou","Quem comprou no pico por FOMO","Quem vendeu","Ninguém"],1,"Entrada na vela da notícia."],
+ ["Qual a regra?",["Entrar na vela da notícia","Nunca entrar na vela da notícia: espere a estrutura","Comprar sempre ouro","Tirar o stop"],1,"O pico acontece muitas vezes no momento da notícia."]],
+c7:[["Porque o risco por operação tem de ser pequeno?",["Por lei","Porque o extremo acontece","Para ganhar menos","Não tem de ser"],1,"BNS, Brexit, pandemia."],
+ ["Em alta volatilidade, o que ajustar?",["Nada","Stop pelo ATR e lote menor","Tirar o stop","Mais alavancagem"],1,"Mesmo risco em dólares."],
+ ["O que define tendências de meses?",["O RSI","O fundamental","O spread","As velas de 1 minuto"],1,"Opere a favor delas."]]
+};
+/* ---------- Gráficos de exemplo do módulo Price action ---------- */
+function P(c,fn,o){ o=o||{}; const sp={c,step:o.step||22,h:o.h||240,w:o.w,x:o.x,axis:o.axis,alt:o.alt}; const ks=buildK(sp); sp.k=ks; sp.m=fn(ks); return sp; }
+const pf=(sp,cap)=>`<figure class="fig">${D(sp)}<figcaption>${cap}</figcaption></figure>`;
+const hiOf=(ks,i)=>ks[i][1], loOf=(ks,i)=>ks[i][2];
+/* Suporte e resistência */
+findL("p","p3").b=findL("p","p3").b.replace("<ul><li>Quanto mais forte","<h3>Como é na prática</h3>"+pf(P([30,38,46,52,47,42,38,34,30.5,36,43,50,52.5,46,40,35,31,37,44,51,58,64],ks=>{
+  const rt=Math.max(hiOf(ks,3),hiOf(ks,12)), sb=Math.min(loOf(ks,8),loOf(ks,16));
+  return [{t:"z",y1:rt-2.6,y2:rt,x1:2,x2:ks.length+2,col:"down"},{t:"z",y1:sb,y2:sb+2.6,x1:7,x2:ks.length+2,col:"up"},
+   {t:"tx",x:7.5,y:rt+1.6,s:"Resistência",col:"down",b:1},{t:"tx",x:12,y:sb-2.2,s:"Suporte",col:"up",b:1},
+   {t:"ar",x:3,dir:"down"},{t:"ar",x:12,dir:"down"},{t:"ar",x:8},{t:"ar",x:16},{t:"tx",x:19.2,y:hiOf(ks,21)+1.5,s:"Rompimento",col:"up",b:1,a:"end"}]; },{alt:"Suporte e resistência"}),
+  "O preço é rejeitado duas vezes na resistência e duas vezes no suporte. As zonas cobrem pavios e corpos. Ao terceiro ataque, a resistência cede.")+"<ul><li>Quanto mais forte");
+/* Padrões gráficos */
+const dtC=[20,26,33,40,47,54,59,55,50,47,51,56,59.5,55,50,46,42,38,34,30,27];
+const dTop=P(dtC,ks=>{ const neck=loOf(ks,9), top=Math.max(hiOf(ks,6),hiOf(ks,12)), tg=neck-(top-neck);
+  return [{t:"pt",x:6,s:"Topo 1"},{t:"pt",x:12,s:"Topo 2"},{t:"h",y:neck,x1:5,x2:ks.length-1,col:"ochre",s:"Linha do pescoço",below:1},{t:"h",y:tg,x1:14,x2:ks.length-1,col:"down",s:"Alvo medido",end:1,below:1},{t:"ar",x:15,dir:"down",s:"Venda"}]; },{alt:"Duplo topo"});
+const dBot=P(dtC.map(v=>80-v),ks=>{ const neck=hiOf(ks,9), bot=Math.min(loOf(ks,6),loOf(ks,12)), tg=neck+(neck-bot);
+  return [{t:"pt",x:6,s:"Fundo 1",p:"b"},{t:"pt",x:12,s:"Fundo 2",p:"b"},{t:"h",y:neck,x1:5,x2:ks.length-1,col:"ochre",s:"Linha do pescoço"},{t:"h",y:tg,x1:14,x2:ks.length-1,col:"up",s:"Alvo medido",end:1},{t:"ar",x:15,s:"Compra"}]; },{alt:"Duplo fundo"});
+const hs=P([20,28,36,44,40,36,42,50,58,52,44,38,44,50,47,42,37,32,27,22],ks=>[{t:"pt",x:3,s:"Ombro"},{t:"pt",x:8,s:"Cabeça"},{t:"pt",x:13,s:"Ombro"},{t:"ln",a:[5,"l"],b:[11,"l"],ext:6,col:"ochre",s:"Pescoço"},{t:"ar",x:16,dir:"down",s:"Venda"}],{alt:"Ombro-cabeça-ombro"});
+const tri=P([50,62,41,59,44,56,47,54,49.5,52.5,51,58,64,70,75],ks=>[{t:"ln",a:[1,"h"],b:[7,"h"],ext:3,col:"down"},{t:"ln",a:[2,"l"],b:[8,"l"],ext:3,col:"up"},{t:"ar",x:11,s:"Rompimento"},{t:"pt",x:4,s:"Triângulo",p:"b",col:"muted"}],{alt:"Triângulo"});
+const flag=P([20,27,35,44,53,51,49.5,48,46.5,45,48.5,55,62,69,75],ks=>[{t:"tx",x:1.4,y:hiOf(ks,3),s:"Mastro",a:"end",col:"muted",b:1},{t:"ln",a:[4,"h"],b:[8,"h"],ext:1,col:"ochre"},{t:"ln",a:[5,"l"],b:[9,"l"],ext:1,col:"ochre"},{t:"pt",x:7,s:"Bandeira",p:"b",col:"muted"},{t:"ar",x:11,s:"Entrada"}],{alt:"Bandeira"});
+findL("p","p7").b=findL("p","p7").b.replace("<p><b>Alvo medido:</b>",`<h3>Como é cada padrão</h3>
+  <div class="sd-grid">
+   <figure class="fig"><figcaption class="figt"><b>Duplo topo</b> · inversão para baixo</figcaption>${D({...dTop,step:16,h:230,padR:3})}</figure>
+   <figure class="fig"><figcaption class="figt"><b>Duplo fundo</b> · inversão para cima</figcaption>${D({...dBot,step:16,h:230,padR:3})}</figure>
+   <figure class="fig"><figcaption class="figt"><b>Ombro-cabeça-ombro</b> · inversão para baixo</figcaption>${D({...hs,step:16,h:230,padR:3})}</figure>
+   <figure class="fig"><figcaption class="figt"><b>Triângulo</b> · continuação na maioria das vezes</figcaption>${D({...tri,step:20,h:230})}</figure>
+   <figure class="fig"><figcaption class="figt"><b>Bandeira</b> · continuação</figcaption>${D({...flag,step:20,h:230})}</figure>
+  </div>
+  <p><b>Alvo medido:</b>`);
+/* Mercado lateral */
+const rangeEx=DR.est.find(x=>x.kind==="range"); if(rangeEx) DR.est=DR.est.filter(x=>x!==rangeEx);
+findL("p","p8").b=findL("p","p8").b.replace("<h3>Como operar</h3>","<h3>Como é na prática</h3>"+pf(P([50,57,63,58,51,45,39,44,51,58,63.5,57,50,44,38.5,45,52,59,63,62.8,57,50,44,40],ks=>[
+  {t:"z",y1:61.5,y2:65,x1:1,x2:ks.length-1,col:"down",s:"Topo da faixa: zona de venda",above:1},{t:"z",y1:36.5,y2:40,x1:1,x2:ks.length-1,col:"up",s:"Fundo da faixa: zona de compra",below:1},
+  {t:"ar",x:10,dir:"down",s:"Venda"},{t:"ar",x:14,s:"Compra"},{t:"pt",x:19,s:"Falso rompimento",col:"ochre"}],{x:{19:[63,68.5,61.8,62.8]},alt:"Mercado lateral"}),
+  "O preço oscila entre o mesmo topo e o mesmo fundo. Compra-se perto do fundo e vende-se perto do topo. O pavio acima da faixa é um falso rompimento: o preço volta para dentro.")+
+  (rangeEx?drFig("est",rangeEx,`${rangeEx.sym} D1 real, até ${dmy(rangeEx.date)}. Os topos e os fundos ficam quase ao mesmo nível e o preço terminou perto de onde começou: mercado lateral.`):"")+"<h3>Como operar</h3>");
+/* Estratégia: pullback em tendência */
+const pb=P([1.2820,1.2846,1.2872,1.2899,1.2884,1.2873,1.2889,1.2914,1.2938,1.2961,1.2946,1.2930,1.2914,1.2903,1.2915,1.2932,1.2953,1.2974,1.2993],ks=>[
+  {t:"z",y1:1.2895,y2:1.2905,x1:3,x2:ks.length-1,col:"ochre"},{t:"tx",x:8.5,y:1.2880,s:"Resistência rompida = suporte",col:"ochre",b:1},
+  {t:"pt",x:9,s:"HH",col:"up"},{t:"pt",x:5,s:"HL",p:"b",col:"up"},{t:"ar",x:14},{t:"tx",x:14,y:1.2868,s:"Engolfo",col:"up",b:1},
+  {t:"h",y:1.2917,x1:14,x2:ks.length+2,col:"ink",s:"Entrada 1.2917",end:1},{t:"h",y:1.2888,x1:14,x2:ks.length+2,col:"down",s:"SL 1.2888",end:1,below:1},{t:"h",y:1.2990,x1:14,x2:ks.length+2,col:"up",s:"TP 1.2990",end:1}],
+  {w:0.0004,x:{13:[1.2914,1.2916,1.2899,1.2903],14:[1.2901,1.2919,1.2898,1.2915]},step:26,h:320,axis:4,alt:"Pullback em tendência"});
+pb.padR=4;
+findL("p","p6").b=findL("p","p6").b.replace(/(<\/ol>)/,"$1<h3>Como é na prática</h3>"+pf(pb,"GBP/USD H1, exemplo ilustrativo com os números do texto. Tendência de alta (HH e HL), recuo até à antiga resistência de 1.2900, engolfo de alta e subida até ao alvo."));
+
 const FLAT=[]; MODULES.forEach((m,mi)=>m.l.forEach(l=>FLAT.push({...l,mi})));
 let done=store.get("done2",{});
 let cur=store.get("cur",FLAT[0].id); if(!FLAT.find(l=>l.id===cur)) cur=FLAT[0].id;
@@ -1772,7 +2078,7 @@ function renderLesson(scroll){
   const sw=$("lesson-view").querySelector('[data-widget="sessions"]'); if(sw) renderSessions(sw);
   const cw=$("lesson-view").querySelector('[data-widget="checklist"]'); if(cw) renderChecklist(cw);
   const zw=$("lesson-view").querySelector('[data-widget="zonescore"]'); if(zw) renderZoneScore(zw);
-  const lw=$("lesson-view").querySelector('[data-widget="lcheck"]'); if(lw) renderLCheck(lw,M.id);
+  const lw=$("lesson-view").querySelector('[data-widget="lcheck"]'); if(lw) renderLCheck(lw,cur);
   renderToc(); store.set("cur",cur);
   if(scroll){ const top=$("lesson-view").getBoundingClientRect().top+window.scrollY-70; if(window.scrollY>top) window.scrollTo({top,behavior:"smooth"}); }
 }
@@ -2068,16 +2374,19 @@ TOPICS.push(["c","Casos reais"]);
 $("q-topics").innerHTML=TOPICS.map(([k,t])=>`<button class="btn small" data-t="${k}" aria-pressed="${k===qTopic}">${t}</button>`).join("");
 
 /* ---------- Teste rápido no fim de cada lição ---------- */
-function renderLCheck(box,mid){
-  const pool=QUIZ.filter(q=>q.g===LCT[mid]); if(!pool.length){ box.remove(); return; }
-  const qs=shuffle(pool.slice()).slice(0,2);
+function renderLCheck(box,lid){
+  const raw=LQ[lid]; if(!raw){ box.remove(); return; }
+  const qs=raw.map(Q=>{ const ord=shuffle(Q[1].map((_,i)=>i)); return [Q[0],ord.map(i=>Q[1][i]),ord.indexOf(Q[2]),Q[3]]; });
+  let ok=0, n=0;
   box.className="lcheck";
-  box.innerHTML=`<div class="eyebrow">Teste rápido</div>`+qs.map((Q,qi)=>`<div class="lq" data-qi="${qi}"><p class="lq-q">${Q.q}</p><div class="lq-o">${Q.o.map((o,k)=>`<button class="opt" data-lk="${k}"><span class="k">${"ABCD"[k]}</span><span>${o}</span></button>`).join("")}</div><div class="lq-e"></div></div>`).join("")+`<button class="btn small" data-lnew>Outras perguntas</button>`;
+  box.innerHTML=`<div class="eyebrow">Teste rápido · ${qs.length} perguntas sobre esta lição</div>`+qs.map((Q,qi)=>`<div class="lq" data-qi="${qi}"><p class="lq-q">${qi+1}. ${Q[0]}</p><div class="lq-o">${Q[1].map((o,k)=>`<button class="opt" data-lk="${k}"><span class="k">${"ABCD"[k]}</span><span>${o}</span></button>`).join("")}</div><div class="lq-e"></div></div>`).join("")+`<div class="lq-sum" hidden></div><button class="btn small" data-lnew>Recomeçar o teste</button>`;
   box.querySelectorAll(".lq").forEach(el=>{ const Q=qs[+el.dataset.qi];
     el.addEventListener("click",e=>{ const b=e.target.closest("[data-lk]"); if(!b||el.dataset.done) return; el.dataset.done=1; const k=+b.dataset.lk;
-      el.querySelectorAll(".opt").forEach(o=>{ o.disabled=true; if(+o.dataset.lk===Q.a) o.classList.add("right"); }); if(k!==Q.a) b.classList.add("wrong");
-      el.querySelector(".lq-e").innerHTML=`<div class="expl"><b>${k===Q.a?"Certo.":"Não é essa."}</b>${Q.e}</div>`; }); });
-  box.querySelector("[data-lnew]").onclick=()=>renderLCheck(box,mid);
+      el.querySelectorAll(".opt").forEach(o=>{ o.disabled=true; if(+o.dataset.lk===Q[2]) o.classList.add("right"); }); if(k!==Q[2]) b.classList.add("wrong");
+      n++; if(k===Q[2]) ok++;
+      el.querySelector(".lq-e").innerHTML=`<div class="expl ${k===Q[2]?"":"bad"}"><b>${k===Q[2]?"Certo.":"Não é essa."}</b>${Q[3]}</div>`;
+      if(n===qs.length){ const sm=box.querySelector(".lq-sum"); sm.hidden=false; sm.className="lq-sum ck-res "+(ok===qs.length?"a":ok>=qs.length-1?"b":"c"); sm.textContent=`${ok} de ${qs.length} certas. `+(ok===qs.length?"Pode avançar para a lição seguinte.":"Releia a lição e tente outra vez."); } }); });
+  box.querySelector("[data-lnew]").onclick=()=>renderLCheck(box,lid);
 }
 
 /* ---------- Exercícios com gráficos reais ---------- */
